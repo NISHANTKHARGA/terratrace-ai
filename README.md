@@ -140,7 +140,7 @@ Every agent returns a structured result with these 11 concepts kept separate (ne
 
 ---
 
-```mermaid
+````mermaid
 graph TD
     subgraph "Frontend (Vercel)"
         A[Analyze Page] --> B(Map Page)
