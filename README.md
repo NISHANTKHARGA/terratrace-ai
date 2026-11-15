@@ -10,7 +10,7 @@
 
 ## 🌍 Mission
 
-TerraTrace AI is a professional multi-sensor Synthetic Aperture Radar (SAR) Earth observation platform that discovers real satellite observations, runs scientific change detection, and publishes evidence-backed environmental findings via 12 specialized AI agents. Built for the **NASA Space Apps Challenge**, it demonstrates actual satellite data processing, machine learning model training, and geospatial intelligence — not simulated data or placeholder cards.
+TerraTrace AI is a multi-sensor Synthetic Aperture Radar (SAR) Earth observation platform that discovers real satellite observations, runs scientific change detection, and publishes evidence-backed environmental findings via 12 specialized AI agents. Built for the **NASA Space Apps Challenge**, it demonstrates actual satellite data processing, machine learning model training, and geospatial intelligence — not simulated data or placeholder cards.
 
 > **Core Principle:** DO NOT just show the user that AI detected something. SHOW the user what the satellite actually observed, how the change was measured, why the AI reached its conclusion, and how reliable that conclusion is.
 
