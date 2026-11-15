@@ -130,34 +130,13 @@ Every agent returns a structured result with these 11 concepts kept separate (ne
 
 ## 📊 Architecture Diagram
 
-```mermaid
-graph TD
-    subgraph "Frontend (Vercel)"
-        A[Analyze Page] --> B(Map Page)
-        B --> C(SAR Lab Page)
-        C --> D(Reports Page)
-        D --> E[User Download]
-    end
+``| Status | Count | Notes |
+|---|---|---|
+| **Operational** | 9 | Flood, Wetlands, Forest, Wildfire, Landslide, Urban, Mining, Coastal, Unknown-change |
+| **Experimental** | 2 | Glacier (baseline only), Agriculture (baseline only) |
+| **Not configured** | 1 | Deformation requires SLC InSAR data |
 
-    subgraph "Backend (Render + FastAPI)"
-        F[API Router] --> G[Data Sources Registry]
-        G --> H[NASA CMR]
-        G --> I[Planetary Computer]
-        G --> J[Earth Search]
-        G --> K[Earthdata]
-
-        L[Preprocessing] --> M[Change Detection]
-        M --> N[Central Orchestrator]
-
-        O[12 Specialist Agents] --> P[Trained RF Models]
-        O --> Q[Validation Engine]
-        Q --> R[Database]
-
-        style F fill:#e1f5fe
-        style G fill:#e8f5e9
-        style N fill:#fff3e0
-    end
-```
+> *Honest status reporting per NASA Space Apps requirements*
 
 ---
 
