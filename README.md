@@ -167,13 +167,13 @@ graph TD
         style G fill:#e8f5e9
         style N fill:#fff3e0
     end
-`mermaid
-pie
-    title Agent Status Distribution
-    "Operational" : 1
-    "Experimental" : 11
-    "Data Unavailable" : 0
-```
+`| Status | Count | Notes |
+|---|---|---|
+| **Operational** | 9 | Flood, Wetlands, Forest, Wildfire, Landslide, Urban, Mining, Coastal, Unknown-change |
+| **Experimental** | 2 | Glacier (baseline only), Agriculture (baseline only) |
+| **Not configured** | 1 | Deformation requires SLC InSAR data |
+
+> *Honest status reporting per NASA Space Apps requirements*
 
 ```mermaid
 flowchart TD
