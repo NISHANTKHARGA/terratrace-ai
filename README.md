@@ -51,15 +51,13 @@ TerraTrace AI runs **12 specialized environmental analysis agents** automaticall
 
 ### Agent Status Overview
 
-```mermaid
-pie
-    title Agent Status Distribution
-    "Operational" : 9
-    "Experimental" : 2
-    "Not configured" : 1
-```
+| Status | Count | Agents |
+|---|---|---|
+| **Operational** | 9 | Flood, Wetlands, Forest, Wildfire, Landslide, Urban, Mining, Coastal, Unknown-change |
+| **Experimental** | 2 | Glacier, Agriculture |
+| **Not configured** | 1 | Deformation (requires SLC InSAR data) |
 
-### Agent Capabilities Table
+> *Honest status reporting per NASA Space Apps requirements*### Agent Capabilities Table
 
 | # | Agent | Status | Model | Core Capability |
 |---|---|---|---|---|
