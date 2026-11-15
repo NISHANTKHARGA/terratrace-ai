@@ -383,7 +383,9 @@ This project is licensed under the **MIT License** — see the [LICENSE] file fo
 
 ## 📬 Contact & Support
 
-- **GitHub Issues**: [Report bugs or feature requests](https://github.com/NISHANTKHARGA/terratrace-ai/issues)
+- **GitHub 
+*Code developed with assistance from AI tools (Claude, ChatGPT) for NASA Space Apps Challenge*
+Issues**: [Report bugs or feature requests](https://github.com/NISHANTKHARGA/terratrace-ai/issues)
 - **Demo**: [https://terratrace-g6ipjfbgp-nishantkhargas-projects.vercel.app](https://terratrace-g6ipjfbgp-nishantkhargas-projects.vercel.app)
 - **Backend API**: [https://terratrace-ai-backend.onrender.com](https://terratrace-ai-backend.onrender.com)
 
