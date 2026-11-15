@@ -135,53 +135,62 @@ Every agent returns a structured result with these 11 concepts kept separate (ne
 ```mermaid
 graph TD
     subgraph "Frontend (Vercel)"
-        A[Analyze Page] -->|Region Selection| B(Map Page)
-        B -->|SAR Observations| C(SAR Lab Page)
-        C -->|12-Agent Results| D(Reports Page)
-        D -->|PDF Download| E[User Download]
+        A[Analyze Page] --> B(Map Page)
+        B --> C(SAR Lab Page)
+        C --> D(Reports Page)
+        D --> E[User Download]
     end
 
     subgraph "Backend (Render + FastAPI)"
-        F[API Router] -->|Observation Search| G[Data Sources Registry]
-        G -->|CMR| H[NASA CMR (NISAR/OPERA/UAVSAR)]
-        G -->|Planetary Computer| I[Sentinel-1 RTC]
-        G -->|Earth Search| J[Sentinel-2/DEM]
-        G -->|Earthdata| K[NISAR/OPERA (credentialled)]
+        F[API Router] --> G[Data Sources Registry]
+        G --> H[NASA CMR]
+        G --> I[Planetary Computer]
+        G --> J[Earth Search]
+        G --> K[Earthdata]
 
-        H & I -->|Raster Reading| L[Preprocessing Engine]
-        L -->|VV/VH dB Arrays| M[Change Detection Engine]
-        M -->|Change Mask| N[Central Orchestrator]
+        L[Preprocessing] --> M[Change Detection]
+        M --> N[Central Orchestrator]
 
-        N -->|Agent Selection| O[12 Specialist Agents]
-        O -->|Model Store| P[Trained RF Models]
-        O -->|Evidence Validation| Q[Validation Engine]
-        Q -->|Findings| R[Database (Supabase/SQLite)]
+        O[12 Specialist Agents] --> P[Trained RF Models]
+        O --> Q[Validation Engine]
+        Q --> R[Database]
 
-        S[Job Runner] -->|Background Processing| T[Job Queue]
+        style F fill:#e1f5fe
+        style G fill:#e8f5e9
+        style N fill:#fff3e0
     end
-
-    style TerraTraceAI fill:#f8f9fa,stroke:#333,stroke-width:2px
 ```
 
 ---
 
-## 📈 Key Metrics & Achievements
+`````mermaid
+graph TD
+    subgraph "Frontend (Vercel)"
+        A[Analyze Page] --> B(Map Page)
+        B --> C(SAR Lab Page)
+        C --> D(Reports Page)
+        D --> E[User Download]
+    end
 
-| Metric | Value |
-|---|---|
-| **Backend Tests** | 36/36 ✅ passing |
-| **Frontend Size** | 430 KB (JS chunk) |
-| **Agents Trained** | 9/12 with RandomForest (Flood, Wetlands, Forest, Wildfire, Landslide, Urban, Mining, Coastal, Unknown-change) |
-| **SAR Observations** | 300+ real Sentinel-1 products discovered |
-| **Data Sources** | 5 active (CMR, PC, ES, UAVSAR, GIBS) |
-| **Model Checkpoints** | 3 stored in /app/data/models/ |
-| **Training Samples** | 127K labeled pixels (flood classification) |
-| **API Endpoints** | 15+ working endpoints |
-| **Deployment** | Frontend: Vercel | Backend: Render (Docker) |
+    subgraph "Backend (Render + FastAPI)"
+        F[API Router] --> G[Data Sources Registry]
+        G --> H[NASA CMR]
+        G --> I[Planetary Computer]
+        G --> J[Earth Search]
+        G --> K[Earthdata]
 
-### 📊 Visual Summary
+        L[Preprocessing] --> M[Change Detection]
+        M --> N[Central Orchestrator]
 
-```mermaid
+        O[12 Specialist Agents] --> P[Trained RF Models]
+        O --> Q[Validation Engine]
+        Q --> R[Database]
+
+        style F fill:#e1f5fe
+        style G fill:#e8f5e9
+        style N fill:#fff3e0
+    end
+`mermaid
 pie
     title Agent Status Distribution
     "Operational" : 1
@@ -196,7 +205,7 @@ flowchart TD
     C --> D[Agent Orchestration]
     D --> E[Findings Publication]
     E --> F[Evidence Explorer]
-    F -->|User Feedback| A
+    F --> G[User Feedback]
 ```
 
 ```mermaid
