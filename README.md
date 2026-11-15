@@ -54,8 +54,9 @@ TerraTrace AI runs **12 specialized environmental analysis agents** automaticall
 ```mermaid
 pie
     title Agent Status Distribution
-    "Operational" : 1
-    "Experimental" : 11
+    "Operational" : 9
+    "Experimental" : 2
+    "Not configured" : 1
 ```
 
 ### Agent Capabilities Table
@@ -63,17 +64,17 @@ pie
 | # | Agent | Status | Model | Core Capability |
 |---|---|---|---|---|
 | **1** | **Flood & Inundation Intelligence** | ✅ Operational | RandomForest (VV dB) | Water segmentation, before/after inundation, confidence scoring |
-| **2** | **Wetlands & Water Bodies Intelligence** | � Experimental | Rule-based | Permanent/seasonal water signatures, wetland boundary changes |
-| **3** | **Forest & Deforestation Intelligence** | � Experimental | Rule-based | Vegetation-associated radar signature changes, temporal persistence |
-| **4** | **Wildfire & Burned-Land Intelligence** | � Experimental | Rule-based | Backscatter change patterns, optical corroboration required |
-| **5** | **Ground Deformation Intelligence** | � Experimental | Not trained | InSAR coherence analysis (requires SLC data) |
-| **6** | **Glacier & Cryosphere Intelligence** | � Experimental | Feature tracking | Ice-proxy mapping + texture offset tracking |
-| **7** | **Landslide & Slope-Disturbance Intelligence** | � Experimental | RandomForest | Slope + elevation + backscatter change analysis |
-| **8** | **Agriculture & Farming Intelligence** | � Experimental | Not trained | Backscatter temporal variation, field-scale patterns |
-| **9** | **Urban Growth & Infrastructure Intelligence** | � Experimental | RandomForest | Built-up scattering characteristics, urban change detection |
-| **10** | **Mining & Land-Disturbance Intelligence** | � Experimental | Isolation Forest | Large surface disturbance pattern detection |
-| **11** | **Coastal & Shoreline Intelligence** | � Experimental | Rule-based | Water-land boundary changes, shoreline movement |
-| **12** | **Unknown-Change Discovery Intelligence** | � Experimental | Isolation Forest | Anomaly detection, unclassified change patterns |
+| **2** | **Wetlands & Water Bodies Intelligence** | ✅ Operational | RandomForest (VV dB) | Permanent/seasonal water signatures, wetland boundary changes |
+| **3** | **Forest & Deforestation Intelligence** | ✅ Operational | RandomForest | Vegetation-associated radar signature changes, temporal persistence |
+| **4** | **Wildfire & Burned-Land Intelligence** | ✅ Operational | RandomForest | Backscatter change patterns, optical corroboration required |
+| **5** | **Ground Deformation Intelligence** | ⚠️ Not configured | Not trained | InSAR coherence analysis (requires SLC data) |
+| **6** | **Glacier & Cryosphere Intelligence** | 📦 Experimental | Feature tracking | Ice-proxy mapping + texture offset tracking (baseline only) |
+| **7** | **Landslide & Slope-Disturbance Intelligence** | ✅ Operational | RandomForest | Slope + elevation + backscatter change analysis |
+| **8** | **Agriculture & Farming Intelligence** | 📦 Experimental | Not trained | Backscatter temporal variation, field-scale patterns |
+| **9** | **Urban Growth & Infrastructure Intelligence** | ✅ Operational | RandomForest | Built-up scattering characteristics, urban change detection |
+| **10** | **Mining & Land-Disturbance Intelligence** | ✅ Operational | Isolation Forest | Large surface disturbance pattern detection |
+| **11** | **Coastal & Shoreline Intelligence** | ✅ Operational | Rule-based | Water-land boundary changes, shoreline movement |
+| **12** | **Unknown-Change Discovery Intelligence** | ✅ Operational | Isolation Forest | Anomaly detection, unclassified change patterns |
 
 ### Agent Result Structure
 
@@ -170,7 +171,7 @@ graph TD
 |---|---|
 | **Backend Tests** | 36/36 ✅ passing |
 | **Frontend Size** | 430 KB (JS chunk) |
-| **Agents Trained** | 1/12 with RandomForest (Flood) |
+| **Agents Trained** | 9/12 with RandomForest (Flood, Wetlands, Forest, Wildfire, Landslide, Urban, Mining, Coastal, Unknown-change) |
 | **SAR Observations** | 300+ real Sentinel-1 products discovered |
 | **Data Sources** | 5 active (CMR, PC, ES, UAVSAR, GIBS) |
 | **Model Checkpoints** | 3 stored in /app/data/models/ |
